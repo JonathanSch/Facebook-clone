@@ -5,8 +5,8 @@ module.exports = {
     find : () => Person.find({is_active:true}),
     findById : (id) => Person.findById(id),
     create : (body) => {
-        const nuevo = new Person(body)
-        return nuevo.save()
+        const newPerson = new Person(body)
+        return newPerson.save()
     },
     change : (person,body) => {
         Object.assign(person,body)
