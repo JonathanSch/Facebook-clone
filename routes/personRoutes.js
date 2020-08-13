@@ -8,9 +8,9 @@ router.post('/login/:id' , personControllers.login)
 
 router.use(middlewares.validateToken)
 
-router.get('/' , personControllers.find)
-router.get('/:id' , personControllers.findById)
-router.patch('/:id' , personControllers.change)
-router.delete('/:id' , personControllers.delete)
+router.get('/persona' , personControllers.find)
+router.get('/persona/:id' , personControllers.findById)
+router.patch('/persona/:id' , personControllers.change)
+router.delete('/persona/:id' , personControllers.delete)
 
 module.exports = router;

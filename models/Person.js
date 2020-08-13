@@ -2,31 +2,32 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 
 const personSchema = new mongoose.Schema({
-    name : {
-        type : String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-    last_name : {
-        type : String,
-        required:true
+    last_name: {
+        type: String,
+        required: true
     },
-    email : {
-        type : String,
-        required:true,
-        unique : true
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
-    password : {
-        type : String,
-        required:true,
+    password: {
+        type: String,
+        required: true,
     },
-    is_active : {
-        default:true,
-        type:Boolean
+    is_active: {
+        default: true,
+        type: Boolean
     },
-    photo : {
-        type : String
-    }
-},{timestamps:true})
+    photo: {
+        type: String
+    },
+    publication: Array
+}, {timestamps: true})
 
 personSchema.pre('save' , function(next){
     const person = this;
